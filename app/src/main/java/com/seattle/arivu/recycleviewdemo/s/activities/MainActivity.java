@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
 import com.seattle.arivu.recycleviewdemo.R;
+import com.seattle.arivu.recycleviewdemo.s.adpaters.DividerItemDecoration;
 import com.seattle.arivu.recycleviewdemo.s.adpaters.MoviesAdapter;
 import com.seattle.arivu.recycleviewdemo.s.util.movieData;
 import com.seattle.arivu.recycleviewdemo.s.util.movieList;
@@ -37,10 +38,12 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         recyclerView.setAdapter(mAdapter);
     }
 
     public void prepareMovieData() {
+        //Need to change to 
         movieList movie = new movieList("Mad Max: Fury Road", "Action & Adventure", "2015");
         movieItem.add(movie);
 
